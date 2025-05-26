@@ -1,0 +1,15 @@
+.counter-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    /* Adjust value for roundness */
+    border: 10;
+    border: green;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    margin: 2rem;
+}
+div{
+    text-align: center;
+}
