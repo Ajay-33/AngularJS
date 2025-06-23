@@ -1,3 +1,5 @@
+<app-header></app-header>
+<router-outlet />
 <!-- <h1> HEllo Angularrr</h1> -->
 <!-- Called as interpolation {{}} i.e display data from ts to html file, exec js code in html file -->
 <!-- <button>{{title}}</button>
@@ -26,7 +28,7 @@
 <input type="text" placeholder="Enter Email" #emailField>
 <button (click)="EmailDisplay(emailField.value)">Get email</button> -->
 
-<h1>If else contol</h1>
+<!-- <h1>If else contol</h1> -->
 
 <!-- @if(display){
   <div style="height: 10rem; width: 10rem; background-color: green; margin: 2px;"></div>
@@ -35,7 +37,7 @@
   <div style="height: 10rem; width: 10rem; background-color: green;"></div>
 } -->
 <!-- u can also have @else with 2 togglings etc -->
- <!-- to write ternary operators like x?15:30 use {{}} -->
+<!-- to write ternary operators like x?15:30 use {{}} -->
 <!-- else-if also is there -->
 <!-- @switch(color){
   @case('red'){
@@ -48,6 +50,114 @@
 } -->
 
 <!-- for loops -->
- @for (user of users; track $index; let id=$index) {
+<!-- @for (user of users; track $index; let id=$index) {
   <h2>{{id+1}},{{user}}</h2>
- }
+ } -->
+
+<!-- Signals -->
+<!-- Signal is wrapper around value, that gives signal values a change, something like useState but not exactly, these give signal when value got updated -->
+<!-- Writable and Computed Signals -->
+<!-- <h1>{{x}}</h1>
+<h2>{{count()}}</h2>
+
+<button (click)="count.set(29)">INcrease Value</button>
+<button (click)="updateValue()">Update Value</button> -->
+<!-- <h1>{{x()}}</h1>
+<h1>{{y()}}</h1>
+<h1>{{z()}}</h1>
+<button (click)="showValue()">Update Value</button> -->
+
+<!-- Effect -->
+<!-- @if(display){
+  <h1 style="background-color: blue;">Heading Ig</h1>
+}
+<h1>{{x()}}</h1>
+<button (click)="x.set('Bunny')">update USer</button> -->
+
+<!-- Contextual Variable -->
+<!-- @for(statement){
+  $count,index,last,first,odd,eve, etc.
+} -->
+<!-- @empty() {
+  No elements available in the array, etc like handling the empty elements case
+} -->
+
+<!-- tack like unq primary key, if ntg then $index -->
+<!-- @for (user of users; track user; let i=$index; let f=$first; let l=$last) { -->
+<!-- <h1>{{$index}} id {{user}}</h1> -->
+<!-- @if($first){
+    <h1 style="background-color: aqua;">{{i}} id user</h1>
+   }
+   @else if(l){
+    <h1 style="background-color: bisque;">{{i}} id user</h1>
+   }
+   @else{
+    <h1 style="background-color: violet;">{{i}} id user</h1>
+   } -->
+<!-- @if($odd){
+    <h1 style="background-color: aqua;">{{i}} id user</h1>
+  }
+  @else {
+    <h1 style="background-color: violet;">{{i}} id user</h1>
+  } -->
+<!-- $count to check total number of elements in the array -->
+<!-- } -->
+
+<!-- <input [(ngModel)]="name" type="text" placeholder="enter name"> -->
+<!-- <h1>{{name}}</h1>
+<input (input)="changeName($event)" type="text" placeholder="enter name"> -->
+<!-- <app-todo></app-todo> -->
+<!-- <app-profile></app-profile> -->
+<!-- Sending Data from paranet to child -->
+<!-- <h1>Pass data to child </h1>
+<app-user [user]=userName></app-user>
+<select #selectedUser (change)="onUserChange(selectedUser.value)">
+  <option value="Ajay">Ajay</option>
+  <option value="Bunny">Bunny</option>
+  <option value="Me">Me</option>
+</select> -->
+
+<!-- <h1>Pass data Child to Parent</h1>
+<app-user (getUsers)="handleUsers($event)"></app-user>
+@for (user of users; track $index) {
+<h2>{{user}}</h2>
+} -->
+
+<!-- <h1>Pipes in Anguular</h1>
+<h2>{{heading}}</h2>
+<h2>{{heading|uppercase}}</h2>
+<h2>{{heading|titlecase}}</h2>
+<h2>{{heading|lowercase}}</h2>
+
+<h2>{{date}}</h2>
+<h2>{{date|date:'fullDate' }}</h2>
+<h2>{{date|date:'hh:mm:ss'}}</h2>
+
+<h2>{{amount}}</h2>
+<h2>{{amount|currency}}</h2>
+<h2>{{amount|currency:'EUR'}}</h2>
+<h2>{{amount|currency:'INR'}}</h2>
+
+<h2>{{date|date:'fullDate'|uppercase }}</h2> -->
+<!-- <h1>Custom Pipe in Angular</h1>
+<h2>{{amount | converter}}</h2>
+<h2>{{amount|converter:12}}</h2> -->
+
+<!-- Services -->
+<!-- <button (click)="getProductData()">Load Product Daata</button>
+@for (item of productData; track $index) {
+  <h1>{{item.name}}</h1>
+  <h2>{{item.price}}</h2>
+  <br><br>
+} -->
+
+@for (item of productData; track item.id) {
+  <ul>
+    <li>{{item.title}}</li>
+    <li>{{item.price}}</li>
+    <li>{{item.rating}}</li>
+    <li>{{item.category}}</li>
+  </ul>
+  <br><br>
+}
+
